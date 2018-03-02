@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js语法</title>
+</head>
+<script type="text/javascript">
+
+	<!-- toString(str仅限数值/布尔值/对象/字符串)  String(是函数可识别任何类型)结合typeof查看的区别 -->
+
+	var str = "stupid";
+     parseInt(str); //如果str是以非数字开头的话，则返回结果一定是NaN(NaN和任何内容都不相等，其中包括他本身) 
+	strString = str.toString();
+	console.log(typeof strString);
+	console.log(String(str));
+	var m;
+	console.log(String(m));//undified
+
+	// boolean 的转换后的值
+	var isStudent = true;
+	var isChild = false;
+	console.log(typeof isStudent);
+	//Boolean()转换
+	var m=1;
+	console.log(Boolean(m)); //true...除了0之外都是true
+	var isString = "happy";
+	console.log(Boolean(isString));//true...除了“”之外都是true（空格也是true）
+	var n;
+	console.log(Boolean(n));//undified为false
+	var b=null;
+	console.log(Boolean(b));//null为false
+
+    //算数操作符
+    var num1 = 12,
+        num2 = "a";
+        num3 = "5";
+    console.log(num1*num2); //NaN
+    console.log(num1*num3); //num3 = "5"自动转换成数值类型（隐式类型转换）
+    //++a a++的区别
+    var num4 = num1++-num3;
+    console.log(num1);//13
+    console.log(num4);//7
+
+    console.log(null==undefined); //true
+     console.log(null===undefined);//false
+     //三元操作符
+     var socre = 100;
+     var result = (socre>=60)?"及格":"不及格";
+     console.log(result);//
+
+     var str="sad",
+     	 nub1 = 30,
+     	 asd;
+     	console.log(str && nub1);//30
+     	console.log(12 && 21);//21    //如果前面的隐式转换后为真，则返回后面的值
+    	console.log("abc" && 21 && "123");//123
+    	console.log(0 && 21 && "123"); //0   //如果前面返回的为假则返回第一个操作数
+    	console.log("" && 21 && "123");//kong
+    	//只要操作数有一个是null 返回null，，有一个是NaN 就返回NaN  undefined同理
+    	console.log(asd && 21 && "123");
+
+    	console.log("" || 0 || null); //null
+    	console.log("" || 12 || null); //12
+    	console.log(12*"as" || 12-"asd" ); //NaN
+    	//非
+    	console.log(!false);//true
+    	console.log(!23); //false
+    	console.log(!0);//true
+    	console.log(!NaN);//true
+    	console.log(!!"");//false
+    	console.log(!!true);//true
+
+   
+</script>>
+<body>
+	
+</body>
+</html>

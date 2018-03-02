@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<p>	还可以输入<em id="count">10</em>/<em>10</em>字</p>
+	<textarea name="sa" id="sa" value="" cols="50" rows="10"></textarea>
+
+
+	<script type="text/javascript">
+	    var txt = document.getElementById("sa");
+	    var cot = document.getElementById("count");
+	    var sum = 10;
+		document.onkeyup = function(event){
+			var len = txt.value.length;
+			var as = sum - len ;
+			cot.innerHTML = as;
+			console.log(len);
+		}
+			document.onkeydown = function(event){
+			var len = txt.value.length;
+			var as = sum - len ;
+			cot.innerHTML = as;
+			console.log(len);
+		}
+			document.onkeypress = function(event){
+			var len = txt.value.length;
+			var as = sum - len ;
+			cot.innerHTML = as;
+			console.log(len);
+		}
+	</script>
+
+</body>
+</html>

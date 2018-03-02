@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>流程控制</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+	//分支
+	// var age=prompt("please enter your age");
+	// if(age<18)
+	// {
+	// 	alert("child");
+	// }
+	// else if(age>60)
+	// {
+	// 	alert("old people");
+	// }
+	// else
+	// {
+	// 	alert("adult");
+	// }
+//practice
+	// var password = prompt("please enter the password:");
+	// if(password.length!=6){
+	// 	alert("no");
+	// }
+	// else{
+	// 	if(isNaN(password)){
+	// 		alert("no number");
+	// 	}
+	// 	else{
+	// 		alert("okay");
+
+	// 	}
+	// }
+
+
+	//返回星期几
+	var week = new Date().getDay();
+	console.log(week); //返回0-6
+	var weekstr = "";
+	switch(week){
+		case 0:weekstr="sunday";break;
+		case 6:weekstr="saturday";break;
+		case 5:weekstr="friday";break;
+	}
+	document.write("today is "+weekstr);
+	</script>>
+</body>
+</html>
+

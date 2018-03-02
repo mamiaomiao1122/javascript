@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>event</title>
+</head>
+<style>
+	.btn{
+		width:200px;height:30px;background: pink;border-radius: 5px;text-align: center;margin-left: 200px;margin-top: 100px;
+	}
+	.btn2{
+		width:100px;height:30px;background: green;border-radius: 5px;text-align: center;margin-left: 200px;margin-top: 100px;
+	}
+	.btn3{
+		margin-left:200px;
+		margin-top: 80px;
+	}
+	.btn4{
+		display:none;
+		margin-top: 10px;
+		margin-left:200px;
+	}
+	.menu{
+		margin-left:200px;
+		margin-top: 10px;
+		width:100px;
+	}
+</style>
+
+<body>
+			<!-- html事件 -->
+	<div class="btn" onmouseover="mouseover(this,'blue')" onmouseout="mouseout(this,'pink')">鼠标划过的时候变色</div>
+
+	        <!-- dom事件 -->
+	<div class="btn" id="btn">star</div>
+	<!-- 选中之后，出现提示框 -->
+	<div class="btn3">
+		<input id="bt" type="text" placeholder="enter the phone">
+	</div>	
+	<div class="btn4" id="btn4">please enter the right phone</div>
+	<!-- 选择颜色后背景颜色改变 -->
+	<select id="menu" class="menu">
+		<option value="">select</option>
+		<option value="red">red</option>
+		<option value="pink">pink</option>
+	</select>
+	<div class="btn" id="box">鼠标的动作</div>
+</body>
+
+<script type="text/javascript">
+	function mouseover(the,color){
+		the.style.background=color;
+}
+	function mouseout(the,color){
+		the.style.background=color;
+	}
+
+
+	var starDom = document.getElementById("btn");
+	starDom.onclick = function (){
+		if(this.innerHTML=="star"){
+			this.className = "btn2";
+			this.innerHTML = "end";
+		}
+		else{
+			console.log("aa");
+			this.className = "btn";
+			this.innerHTML = "start";
+		}
+		
+	}
+
+	function clickstar(){
+		//alert("mm");
+	}
+	starDom.onclick = clickstar;   //没有括号  否则不点击按钮，只刷新就调用函数了
+
+     var phonestr = document.getElementById("bt");
+     var phonestr2 = document.getElementById("btn4")
+     phonestr.onfocus = function (){
+     	phonestr2.style.display="block";
+     }
+     phonestr.onblur = function (){
+     	var phonevalue = this.value;
+     	console.log(phonevalue);
+     	if(phonevalue.length == 4 && isNaN(phonevalue)==false){
+     		phonestr2.style.display="none";
+     		phonestr2.innerHTML = '<img src="a.jpg">';
+     	}
+     	else{
+     		phonestr2.style.display="block";
+     	}
+     }
+
+     window.onload = init;
+     function init(){
+     	 var menu = document.getElementById("menu");
+     	 menu.onchange= function(){  //select checkbox radio 内容改变时
+     	 	var bg = this.value;
+     	 	var bg = menu.options[menu.selectedIndex].value;
+     	 	if(bg=="")
+     	 		document.body.style.background = "white";
+     	 	else 
+     	 		document.body.style.background = bg;
+     	 }
+     }
+    var box = document.getElementById("box");
+    box.onmousedown = function(){
+    	alert("点击该按钮");
+    }
+    box.onmouseup = function(){
+
+    }
+    box.onmousemove = function(){
+    	// alert("slide");
+    }
+    window.onresize = function(){
+    	
+    }
+    window.onscroll = function(){
+    	
+    }
+
+</script>
+</html>
